@@ -9,6 +9,7 @@ Il programma dovrà chiedere all’utente il numero di chilometri che vuole perc
 
 */
 
+
 //Il programma dovrà chiedere all’utente il numero di chilometri che vuole percorrere e l’età del passeggero.
 let km = parseInt(prompt("Quanti chilometri vuoi percorrere?"));
 console.log(km);
@@ -16,6 +17,11 @@ console.log(km);
 let eta = parseInt(prompt("Inserisci la tua età"));
 console.log(eta);
 
+//prezzo al chilometro
+let prezzokm = 0.21; 
+//operazione del prezzo totale
+let prezzototale = km * 0.21;
+console.log(prezzototale);
 
 
 
