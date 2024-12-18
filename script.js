@@ -11,18 +11,38 @@ Il programma dovrà chiedere all’utente il numero di chilometri che vuole perc
 
 
 //Il programma dovrà chiedere all’utente il numero di chilometri che vuole percorrere e l’età del passeggero.
-let km = parseInt(prompt("Quanti chilometri vuoi percorrere?"));
-console.log(km);
+const km = parseFloat(prompt("Quanti chilometri vuoi percorrere?"));
+//console.log(km);
 
-let eta = parseInt(prompt("Inserisci la tua età"));
-console.log(eta);
+const eta = parseFloat(prompt("Inserisci la tua età"));
+//console.log(eta);
 
-//prezzo al chilometro
-let prezzokm = 0.21; 
 //operazione del prezzo totale
-let prezzototale = km * 0.21;
-console.log(prezzototale);
+const prezzototale = km * 0.21;
+//console.log(prezzototale);
 
+let sconto = 0;
+let scontoPercentage = 0;
+
+if (eta < 18) {
+    sconto = prezzototale * 0.2;
+    scontoPercentage = 20;
+} else if (eta > 65) {
+    sconto = prezzototale * 0.4;
+    scontoPercentage = 40;
+}
+
+const prezzofinale = prezzototale - sconto; 
+
+console.log("devi percorrere " + km + " km ed hai " + eta + " anni");
+
+if (sconto > 0) {
+    console.log("Hai il diritto ad uno sconto del " + scontoPercentage + "%");
+} else {
+    console.log("Purtroppo alla tua categoria di età non spetta nessuno sconto");
+}
+
+console.log("Pagherai: " + prezzofinale.toFixed(2) + "€");
 
 
 
